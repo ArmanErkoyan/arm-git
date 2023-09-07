@@ -1,31 +1,163 @@
 
 
+// // var element = document.getElementById("gen_div1");
+// // let tegsAdd = document.createElement("div")
+// // function add() {
+// //     tegsAdd.appendChild(element)
+// // }
+// var a = 5
 
-var arr = [2, 3, 6, 3, 9, 7]
-var arr1 = [2, 3, 6, 32, 9, 71]
-var arr2 = [2, 3, 6, 34, 90, 7]
+// switch (a) {
+//     case "4":
+//         console.log("a = 4");
+//         break
+//     case "6":
+//         console.log("a = 6");
+//         break
+//     case 5:
+//         console.log("a = 5");
+//         break
+//     default:
+//         console.log("asss");
+// }
+// let s= 0
+// setInterval(function ab(){
 
-function a(num) {
-    let k = 0
-    for (let index = 0; index < arr.length; index++) {
-        k += num[index]
+// },1500)
+// var asus = setInterval(acba,500)
 
+// function acba(){
+//     console.log(s)
+//     s++
+//     if (s==3) {
+//         clearInterval(asus)
+//     }
+// }
+
+// setTimeout( function(){
+//     console.log("Arman");
+// },1500)
+
+
+// let arr = [8, 9, 7, 89, 59, 46]
+
+// console.log(typeof arr[3]);
+// console.log(typeof arr.sort().join(""));
+
+// var a
+// console.log(a);
+// var a=5
+
+// const poi = [8, 9, 7, 89, 59, 46]
+// poi.sort(function(a,b){return a-b})
+// console.log(poi);
+
+// class parents {
+
+
+//     constructor(name,age,status){
+//         this.name = name;
+//         this.age = age;
+//         this.status = status;
+//     }
+
+
+//      info(){
+//         console.log("name is" + " " + this.name);
+//     };
+// }
+
+// var alex = new parents('Alex',23,true)
+// var jon = new parents('jon',27,false)
+
+
+// alex.info()
+
+// let arr = [...arr1, ...arr2]
+// let mid
+// let c = 0
+// arr.sort(function (a, b) { return a - b })
+
+// for (var i = 0; i < arr.length; i++) {
+//     c = arr[i] + c;
+// }
+// mid = c / i
+
+// mid = mid.toFixed(5)
+
+
+
+// return (mid);
+// let n;
+// console.log(n);
+// let count=1;
+// function asus() {
+//     if (n==undefined) {
+//         count=0;
+//         return
+//     }
+
+// while (n/10>10) {
+
+//     count++
+//     n=n/10;
+//     console.log(n);
+
+// }
+// }
+// asus()
+// console.log(count);
+// let num = [1,3,6,9,6,5,9,5]
+// let tex=[]
+// let num1
+// add=100
+// tex=num.find((v,i,a)=>{
+//     console.log(tex);
+//     return v>1
+
+// })
+// console.log(tex);
+// console.log(true+true);
+
+
+var myAtoi = function (s) {
+    let arm = ''
+    let cou = 0;
+    let cou1
+    if (s[0] == "w") {
+        return 0
     }
-    console.log(k)
+    for (i = 0; i < s.length; i++) {
+        if (s[i].charCodeAt() < 65 || s[i].charCodeAt() > 122) {
+            cou = i
+            if ((i - cou1) > 1) {
+                break
+            }
+            cou1 = cou
+            if ((s[i] != " " && s[i + 1] == " ") || (s[i] != " " && s[i + 1] == "+") || (s[i] != " " && s[i + 1] == "-")) {
+                arm += s[i]
+                break
+            }
+            arm += s[i]
+        }
+    }
+    if (arm[arm.length - 1] == "-" || arm[arm.length - 1] == "+") {
+        let asus = [...arm]
+        asus[asus.length - 1] = " "
+        arm = asus.join("")
+    }
+    let arr1 = arm
+    arm = ''
+    let k = Number(arr1)
+    if (isNaN(k)) {
+        return 0
+    }
+    if (k > (2 ** 31 - 1)) {
+        k = 2 ** 31 - 1
+    }
+    if (k < ((-2) ** 31)) {
+        k = (-2) ** 31
+    }
+    return k
 }
-a(arr)
-a(arr1)
-a(arr2)
-
-
-
-let ops = 0;
-function color(elem) {
-    ops++;
-    console.log(typeof ops, ops);
-    elem.innerHTML = ops
-    document.getElementById('input').innerHTML = "Armancho";
-    elem.style.color = "red"
-
-}
-
+myAtoi('-5-')
