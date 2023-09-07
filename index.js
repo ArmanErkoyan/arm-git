@@ -98,11 +98,11 @@
 //     }
 
 // while (n/10>10) {
-   
+
 //     count++
 //     n=n/10;
 //     console.log(n);
-  
+
 // }
 // }
 // asus()
@@ -120,28 +120,44 @@
 // console.log(true+true);
 
 
-// let arr2=''
-// var myAtoi = function(s) {
-//     for(i=0;i<s.length;i++){
-//         console.log(s[i].charCodeAt());
-//         if (s[i].charCodeAt()<65 || s[i].charCodeAt()>122) {
-//             arr2+=s[i]
-//         }
-
-//     }
-//     console.log(arr2)
-//     return Number(arr2)
-// }
-// a="      -42"
-// var e = myAtoi(a)
-// console.log(e);
-// let cd = "z"
-// // console.log(cd.charCodeAt())
-// console.log(typeof "a");
-let k=1485654
-console.log(NaN%1);
-if(typeof k == NaN){
-    
-    console.log("asus");
+var myAtoi = function (s) {
+    let arm = ''
+    let cou = 0;
+    let cou1
+    if (s[0] == "w") {
+        return 0
+    }
+    for (i = 0; i < s.length; i++) {
+        if (s[i].charCodeAt() < 65 || s[i].charCodeAt() > 122) {
+            cou = i
+            if ((i - cou1) > 1) {
+                break
+            }
+            cou1 = cou
+            if ((s[i] != " " && s[i + 1] == " ") || (s[i] != " " && s[i + 1] == "+") || (s[i] != " " && s[i + 1] == "-")) {
+                arm += s[i]
+                break
+            }
+            arm += s[i]
+        }
+    }
+    if (arm[arm.length - 1] == "-" || arm[arm.length - 1] == "+") {
+        let asus = [...arm]
+        asus[asus.length - 1] = " "
+        arm = asus.join("")
+    }
+    let arr1 = arm
+    arm = ''
+    let k = Number(arr1)
+    if (isNaN(k)) {
+        return 0
+    }
+    if (k > (2 ** 31 - 1)) {
+        k = 2 ** 31 - 1
+    }
+    if (k < ((-2) ** 31)) {
+        k = (-2) ** 31
+    }
+    return k
 }
-undefined
+myAtoi('-5-')
