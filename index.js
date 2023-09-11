@@ -173,21 +173,36 @@
 //239 hard task from leedcode |
 
 var maxSlidingWindow = function (nums, k) {
+        
+        let arr1 = []
+        if(1<=k<=nums.length && 1<=nums.length<=100000){
         let arr = []
+        
         let d = 0
         let count = k;
-        for (j = 0; j < nums.length - k; j++) {
+        for (j = 0; j < nums.length - k+1; j++) {
                 for (let i = d; i < count; i++) {
                         arr.push(nums[i])
 
                 }
-                console.log(Math.max(...arr));
+                arr1.push(Math.max(...arr));
                 d++;
                 count++
                 arr=[]
         }
+console.log(arr1)
+}
 
 }
 let masiv = [1, 9, 8, 9, 5, 6, 6, 7, 5, 9, 5, 5]
 maxSlidingWindow(masiv, 3)
+// let aste
 
+// for (let i = 0; i < aste.length; i++) {
+//        if (aste[i]>10000 || aste[i]<-10000) {
+//         console.log(i);
+//        }
+        
+// }
+// // console.log(count);
+// console.log(aste.length);
