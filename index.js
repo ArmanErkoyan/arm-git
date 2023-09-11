@@ -119,45 +119,75 @@
 // console.log(tex);
 // console.log(true+true);
 
+//*************** search number in string  task 6
 
-var myAtoi = function (s) {
-    let arm = ''
-    let cou = 0;
-    let cou1
-    if (s[0] == "w") {
-        return 0
-    }
-    for (i = 0; i < s.length; i++) {
-        if (s[i].charCodeAt() < 65 || s[i].charCodeAt() > 122) {
-            cou = i
-            if ((i - cou1) > 1) {
-                break
-            }
-            cou1 = cou
-            if ((s[i] != " " && s[i + 1] == " ") || (s[i] != " " && s[i + 1] == "+") || (s[i] != " " && s[i + 1] == "-")) {
-                arm += s[i]
-                break
-            }
-            arm += s[i]
+// var myAtoi = function (s) {
+//     let arm = ''
+//     let cou = 0;
+//     let cou1
+//     if (s[0] == "w") {
+//         return 0
+//     }
+//     for (i = 0; i < s.length; i++) {
+//         if (s[i].charCodeAt() < 65 || s[i].charCodeAt() > 122) {
+//             cou = i
+//             if ((i - cou1) > 1) {
+//                 break
+//             }
+//             cou1 = cou
+//             if ((s[i] != " " && s[i + 1] == " ") || (s[i] != " " && s[i + 1] == "+") || (s[i] != " " && s[i + 1] == "-")) {
+//                 arm += s[i]
+//                 break
+//             }
+//             arm += s[i]
+//         }
+//     }
+//     if (arm[arm.length - 1] == "-" || arm[arm.length - 1] == "+") {
+//         let asus = [...arm]
+//         asus[asus.length - 1] = " "
+//         arm = asus.join("")
+//     }
+//     let arr1 = arm
+//     arm = ''
+//     let k = Number(arr1)
+//     if (isNaN(k)) {
+//         return 0
+//     }
+//     if (k > (2 ** 31 - 1)) {
+//         k = 2 ** 31 - 1
+//     }
+//     if (k < ((-2) ** 31)) {
+//         k = (-2) ** 31
+//     }
+//     return k
+// }
+// myAtoi('-5-')
+
+
+
+
+// ************    task 135  cendy
+
+
+
+//239 hard task from leedcode |
+
+var maxSlidingWindow = function (nums, k) {
+        let arr = []
+        let d = 0
+        let count = k;
+        for (j = 0; j < nums.length - k; j++) {
+                for (let i = d; i < count; i++) {
+                        arr.push(nums[i])
+
+                }
+                console.log(Math.max(...arr));
+                d++;
+                count++
+                arr=[]
         }
-    }
-    if (arm[arm.length - 1] == "-" || arm[arm.length - 1] == "+") {
-        let asus = [...arm]
-        asus[asus.length - 1] = " "
-        arm = asus.join("")
-    }
-    let arr1 = arm
-    arm = ''
-    let k = Number(arr1)
-    if (isNaN(k)) {
-        return 0
-    }
-    if (k > (2 ** 31 - 1)) {
-        k = 2 ** 31 - 1
-    }
-    if (k < ((-2) ** 31)) {
-        k = (-2) ** 31
-    }
-    return k
+
 }
-myAtoi('-5-')
+let masiv = [1, 9, 8, 9, 5, 6, 6, 7, 5, 9, 5, 5]
+maxSlidingWindow(masiv, 3)
+
